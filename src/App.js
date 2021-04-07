@@ -25,9 +25,9 @@ function App() {
     modal변경(!modal);
   }
   function 글저장함수(e){
+    console.log(e.target.value);
     let 새번호=3;
-    var newArray = [...글제목];
-    newArray[num] = e.target.value;
+    var newArray = [...글제목,e.target.value];
     글제목변경( newArray );
     번호변경(새번호++);
   }
@@ -53,7 +53,13 @@ function App() {
       }
       <div className="publish">
         <input onChange={(e)=>{입력값변경(e.target.value)}}/>
-        <button onClick={글저장함수}>저장</button>
+        <button onClick={(e)=>{
+          입력값변경(e.target.value)
+          console.log(입력값);
+    let 새번호=3;
+    var newArray = [...글제목,입력값];
+    글제목변경( newArray );
+    번호변경(새번호++);}}>저장</button>
       </div>
       <button onClick={모달스위치}>모달스위치</button>
       { 
