@@ -4,7 +4,7 @@ import React, {useState} from 'react';
 import './App.css';
 
 function App() {
-  let [글제목,글제목변경] = useState(['남자 코트 추천','강남 우동맛집','파이썬 독학']);
+  let [글제목,글제목변경] = useState(['남자 코트 추천','강남 우동맛집','리액트 독학']);
   let [따봉, 따봉변경] = useState(0);
 
   let [modal, modal변경] = useState(false);
@@ -54,13 +54,15 @@ function App() {
       <div className="publish">
         <input onChange={(e)=>{입력값변경(e.target.value)}}/>
         <button onClick={(e)=>{
-          입력값변경(e.target.value)
-          console.log(입력값);
-    let 새번호=3;
-    var newArray = [...글제목,입력값];
-    글제목변경( newArray );
-    번호변경(새번호++);}}>저장</button>
-      </div>
+            //입력값변경(e.target.value)
+            //console.log(입력값);
+           // let 새번호=3;
+            let newArray = [입력값, ...글제목];
+            글제목변경( newArray );
+            console.log(newArray);
+           // 번호변경(새번호++);
+          }}>저장</button>
+        </div>
       <button onClick={모달스위치}>모달스위치</button>
       { 
          modal === true
